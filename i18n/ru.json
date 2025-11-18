@@ -5,8 +5,9 @@
     "menu_verbs": "1. Спряжение глаголов (Präsens)",
     "menu_nouns": "2. Существительные и артикли",
     "menu_cases": "3. Падежи (Артикли и Местоимения)",
-    "menu_stats": "4. Показать статистику",
-    "menu_exit": "5. Выход",
+    "menu_modals": "4. Модальные глаголы",
+    "menu_stats": "5. Показать статистику",
+    "menu_exit": "6. Выход",
     "enter_number": "\nВведите номер: ",
     "invalid_input": "Неверный ввод. Попробуйте еще раз.",
     "press_enter": "Нажмите Enter для продолжения...",
@@ -60,5 +61,8 @@
     "prompt_details_article": "(Падеж: {case}, Существительное: {gender_article} {noun})",
     "prompt_details_pronoun": "(Падеж: {case}, Местоимение: {pronoun})",
     "stats_article_decl_title": "\n--- Успешность (Склонение артиклей) ---",
-    "stats_pronoun_decl_title": "\n--- Успешность (Личные местоимения) ---"
+    "stats_pronoun_decl_title": "\n--- Успешность (Личные местоимения) ---",
+    "mode_7_title": "Спряжение модальных глаголов",
+    "question_modal": "\nПоставьте глагол в правильную форму: {pronoun} ({infinitive})",
+    "stats_modals_title": "\n--- Успешность (Модальные глаголы) ---"
 }

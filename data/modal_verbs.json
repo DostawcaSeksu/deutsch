@@ -1,0 +1,62 @@
+[
+    {
+        "infinitive": "müssen",
+        "translation": { "ru": "быть должным, быть вынужденным (по своему желанию)", "en": "must, to have to" },
+        "forms": {
+            "ich/er/sie/es": "muss",
+            "du": "musst",
+            "wir/sie_plural/Sie": "müssen",
+            "ihr": "müsst"
+        }
+    },
+    {
+        "infinitive": "sollen",
+        "translation": { "ru": "быть должным (по совету, закону)", "en": "should, ought to" },
+        "forms": {
+            "ich/er/sie/es": "soll",
+            "du": "sollst",
+            "wir/sie_plural/Sie": "sollen",
+            "ihr": "sollt"
+        }
+    },
+    {
+        "infinitive": "können",
+        "translation": { "ru": "мочь, уметь", "en": "can, to be able to" },
+        "forms": {
+            "ich/er/sie/es": "kann",
+            "du": "kannst",
+            "wir/sie_plural/Sie": "können",
+            "ihr": "könnt"
+        }
+    },
+    {
+        "infinitive": "dürfen",
+        "translation": { "ru": "мочь (иметь разрешение)", "en": "may, to be allowed to" },
+        "forms": {
+            "ich/er/sie/es": "darf",
+            "du": "darfst",
+            "wir/sie_plural/Sie": "dürfen",
+            "ihr": "dürft"
+        }
+    },
+    {
+        "infinitive": "wollen",
+        "translation": { "ru": "хотеть (как желание)", "en": "to want to" },
+        "forms": {
+            "ich/er/sie/es": "will",
+            "du": "willst",
+            "wir/sie_plural/Sie": "wollen",
+            "ihr": "wollt"
+        }
+    },
+    {
+        "infinitive": "möchten",
+        "translation": { "ru": "хотеть (как просьба)", "en": "to like to" },
+        "forms": {
+            "ich/er/sie/es": "möchte",
+            "du": "möchtest",
+            "wir/sie_plural/Sie": "möchten",
+            "ihr": "möchtet"
+        }
+    }
+]

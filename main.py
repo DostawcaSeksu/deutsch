@@ -5,6 +5,7 @@ from utils.ui import clear_screen
 from modules.verb_trainer import VerbTrainer
 from modules.noun_trainer import NounTrainer
 from modules.case_trainer import CaseTrainer
+from modules.modal_verb_trainer import ModalVerbTrainer
 
 def main():
     """Main function to run the application."""
@@ -29,6 +30,7 @@ def main():
         print(loc.get('menu_verbs'))
         print(loc.get('menu_nouns'))
         print(loc.get('menu_cases'))
+        print(loc.get('menu_modals'))
         print(loc.get('menu_stats'))
         print(loc.get('menu_exit'))
         
@@ -59,8 +61,17 @@ def main():
                 print(f"Error: {e}")
                 input(loc.get('press_enter'))
         elif choice == '4':
-            display_stats(stats, loc)
+            try:
+                trainer = ModalVerbTrainer(loc)
+                trainer.run(stats)
+                save_json(config.STATS_FILE, stats)
+            except FileNotFoundError as e:
+                print(f"Error: {e}")
+                input(loc.get('press_enter'))
+        
         elif choice == '5':
+            display_stats(stats, loc)
+        elif choice == '6':
             print(loc.get('goodbye'))
             break
         else:
@@ -106,7 +117,8 @@ def get_default_stats():
             "main": {"correct": 0, "incorrect": 0}
         },
         "article_declension": article_keys,
-        "pronoun_declension": pronoun_keys
+        "pronoun_declension": pronoun_keys,
+        "modal_verbs": {}
     }
 
 def display_stats(stats, loc):
@@ -160,6 +172,16 @@ def display_stats(stats, loc):
     if 'pronoun_declension' in stats and any(v['correct'] or v['incorrect'] for v in stats['pronoun_declension'].values()):
         print(loc.get('stats_pronoun_decl_title'))
         for key, data in sorted(stats['pronoun_declension'].items()):
+            correct, incorrect = data['correct'], data['incorrect']
+            total = correct + incorrect
+            if total > 0:
+                percentage = correct / total
+                bar = '█' * int(percentage * 20)
+                print(f"{key.ljust(20)} [{bar.ljust(20)}] {percentage:.0%}")
+
+    if 'modal_verbs' in stats and any(v['correct'] or v['incorrect'] for v in stats['modal_verbs'].values()):
+        print(loc.get('stats_modals_title'))
+        for key, data in sorted(stats['modal_verbs'].items()):
             correct, incorrect = data['correct'], data['incorrect']
             total = correct + incorrect
             if total > 0:

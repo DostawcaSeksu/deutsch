@@ -5,8 +5,9 @@
     "menu_verbs": "1. Verb Conjugation (Präsens)",
     "menu_nouns": "2. Nouns & Articles",
     "menu_cases": "3. Cases (Articles & Pronouns)",
-    "menu_stats": "4. Show Statistics",
-    "menu_exit": "5. Exit",
+    "menu_modals": "4. Modal Verbs",
+    "menu_stats": "5. Show Statistics",
+    "menu_exit": "6. Exit",
     "enter_number": "\nEnter number: ",
     "invalid_input": "Invalid input. Please try again.",
     "press_enter": "Press Enter to continue...",
@@ -60,5 +61,8 @@
     "prompt_details_article": "(Case: {case}, Noun: {gender_article} {noun})",
     "prompt_details_pronoun": "(Case: {case}, Pronoun: {pronoun})",
     "stats_article_decl_title": "\n--- Success Rate (Article Declension) ---",
-    "stats_pronoun_decl_title": "\n--- Success Rate (Personal Pronouns) ---"
+    "stats_pronoun_decl_title": "\n--- Success Rate (Personal Pronouns) ---",
+    "mode_7_title": "Modal Verb Conjugation",
+    "question_modal": "\nPut the verb in the correct form: {pronoun} ({infinitive})",
+    "stats_modals_title": "\n--- Success Rate (Modal Verbs) ---"
 }
