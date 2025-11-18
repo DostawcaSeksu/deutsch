@@ -1,9 +1,10 @@
-import os
 import config
 from utils.file_handler import load_json, save_json
 from utils.localization import Localization
+from utils.ui import clear_screen
 from modules.verb_trainer import VerbTrainer
 from modules.noun_trainer import NounTrainer
+from modules.case_trainer import CaseTrainer
 
 def main():
     """Main function to run the application."""
@@ -49,9 +50,14 @@ def main():
             except FileNotFoundError as e:
                 print(f"Error: {e}")
                 input(loc.get('press_enter'))
-        elif choice in '3':
-             print("\nThis module is coming soon!")
-             input(loc.get('press_enter'))
+        elif choice == '3':
+            try:
+                trainer = CaseTrainer(loc)
+                trainer.run(stats)
+                save_json(config.STATS_FILE, stats)
+            except FileNotFoundError as e:
+                print(f"Error: {e}")
+                input(loc.get('press_enter'))
         elif choice == '4':
             display_stats(stats, loc)
         elif choice == '5':
@@ -60,9 +66,6 @@ def main():
         else:
             print(loc.get('invalid_input'))
             input(loc.get('press_enter'))
-
-def clear_screen():
-    os.system('cls' if os.name == 'nt' else 'clear')
 
 def select_language():
     """Prompts the user to select a language."""
@@ -81,6 +84,14 @@ def get_default_stats():
     """Returns a default stats structure."""
     pronoun_rules = load_json(config.PRONOUN_RULES_FILE) or []
     pronoun_groups = {rule['group']: rule['ending'] for rule in pronoun_rules}
+    articles = load_json(config.ARTICLES_FILE) or {}
+    article_keys = {f"{gender}-{case}": {"correct": 0, "incorrect": 0} 
+                    for gender in articles for case in articles[gender]}
+
+    pronouns = load_json(config.PERSONAL_PRONOUNS_FILE) or {}
+    pronoun_keys = {f"{pronoun}-{case}": {"correct": 0, "incorrect": 0}
+                    for case in pronouns for pronoun in pronouns[case]}
+
     
     return {
         "total_score": 0,
@@ -93,7 +104,9 @@ def get_default_stats():
         },
         "singular_plural": {
             "main": {"correct": 0, "incorrect": 0}
-        }
+        },
+        "article_declension": article_keys,
+        "pronoun_declension": pronoun_keys
     }
 
 def display_stats(stats, loc):
@@ -133,6 +146,26 @@ def display_stats(stats, loc):
     percentage = correct / total if total > 0 else 0
     bar = '█' * int(percentage * 20)
     print(f"{'Singular/Plural'.ljust(20)} [{bar.ljust(20)}] {percentage:.0%}")
+
+    if 'article_declension' in stats and any(v['correct'] or v['incorrect'] for v in stats['article_declension'].values()):
+        print(loc.get('stats_article_decl_title'))
+        for key, data in sorted(stats['article_declension'].items()):
+            correct, incorrect = data['correct'], data['incorrect']
+            total = correct + incorrect
+            if total > 0:
+                percentage = correct / total
+                bar = '█' * int(percentage * 20)
+                print(f"{key.ljust(20)} [{bar.ljust(20)}] {percentage:.0%}")
+    
+    if 'pronoun_declension' in stats and any(v['correct'] or v['incorrect'] for v in stats['pronoun_declension'].values()):
+        print(loc.get('stats_pronoun_decl_title'))
+        for key, data in sorted(stats['pronoun_declension'].items()):
+            correct, incorrect = data['correct'], data['incorrect']
+            total = correct + incorrect
+            if total > 0:
+                percentage = correct / total
+                bar = '█' * int(percentage * 20)
+                print(f"{key.ljust(20)} [{bar.ljust(20)}] {percentage:.0%}")
     
     input(f"\n{loc.get('press_enter')}")
 

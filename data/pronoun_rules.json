@@ -2,10 +2,10 @@
     {"pronoun": "ich", "ending": "-e", "group": "ich"},
     {"pronoun": "du", "ending": "-st", "group": "du"},
     {"pronoun": "er", "ending": "-t", "group": "er / sie / es / ihr"},
-    {"pronoun": "sie (она)", "ending": "-t", "group": "er / sie / es / ihr"},
+    {"pronoun": "sie", "key": "she", "ending": "-t", "group": "er / sie / es / ihr"},
     {"pronoun": "es", "ending": "-t", "group": "er / sie / es / ihr"},
     {"pronoun": "ihr", "ending": "-t", "group": "er / sie / es / ihr"},
     {"pronoun": "wir", "ending": "-en", "group": "wir / sie / Sie"},
-    {"pronoun": "sie (они)", "ending": "-en", "group": "wir / sie / Sie"},
-    {"pronoun": "Sie (вежл.)", "ending": "-en", "group": "wir / sie / Sie"}
+    {"pronoun": "sie", "key": "they", "ending": "-en", "group": "wir / sie / Sie"},
+    {"pronoun": "Sie", "key": "formal", "ending": "-en", "group": "wir / sie / Sie"}
 ]

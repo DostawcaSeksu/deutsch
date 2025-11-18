@@ -1,0 +1,10 @@
+{
+    "akkusativ": {
+        "ich": "mich", "du": "dich", "er": "ihn", "sie": "sie", "es": "es",
+        "wir": "uns", "ihr": "euch", "sie": "sie", "Sie": "Sie"
+    },
+    "dativ": {
+        "ich": "mir", "du": "dir", "er": "ihm", "sie": "ihr", "es": "ihm",
+        "wir": "uns", "ihr": "euch", "sie": "ihnen", "Sie": "Ihnen"
+    }
+}

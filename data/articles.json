@@ -1,0 +1,26 @@
+{
+    "maskulin": {
+        "nominativ": { "bestimmter": "der", "unbestimmter": "ein" },
+        "akkusativ": { "bestimmter": "den", "unbestimmter": "einen" },
+        "dativ":     { "bestimmter": "dem", "unbestimmter": "einem" },
+        "genitiv":   { "bestimmter": "des", "unbestimmter": "eines" }
+    },
+    "feminin": {
+        "nominativ": { "bestimmter": "die", "unbestimmter": "eine" },
+        "akkusativ": { "bestimmter": "die", "unbestimmter": "eine" },
+        "dativ":     { "bestimmter": "der", "unbestimmter": "einer" },
+        "genitiv":   { "bestimmter": "der", "unbestimmter": "einer" }
+    },
+    "neutral": {
+        "nominativ": { "bestimmter": "das", "unbestimmter": "ein" },
+        "akkusativ": { "bestimmter": "das", "unbestimmter": "ein" },
+        "dativ":     { "bestimmter": "dem", "unbestimmter": "einem" },
+        "genitiv":   { "bestimmter": "des", "unbestimmter": "eines" }
+    },
+    "plural": {
+        "nominativ": { "bestimmter": "die", "unbestimmter": "keine" },
+        "akkusativ": { "bestimmter": "die", "unbestimmter": "keine" },
+        "dativ":     { "bestimmter": "den", "unbestimmter": "keinen" },
+        "genitiv":   { "bestimmter": "der", "unbestimmter": "keiner" }
+    }
+}

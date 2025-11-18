@@ -1,0 +1,16 @@
+{
+    "articles": [
+        { "sentence": "Ich sehe {blank} Mann.", "gender": "maskulin", "case": "akkusativ", "noun": "Mann", "translation": {"ru": "Я вижу (этого) мужчину.", "en": "I see the man."}},
+        { "sentence": "Das ist {blank} Auto von meinem Bruder.", "gender": "neutral", "case": "nominativ", "noun": "Auto", "translation": {"ru": "Это машина моего брата.", "en": "This is my brother's car."}},
+        { "sentence": "Er hilft {blank} Frau.", "gender": "feminin", "case": "dativ", "noun": "Frau", "translation": {"ru": "Он помогает (этой) женщине.", "en": "He helps the woman."}},
+        { "sentence": "Gibst du mir {blank} Buch?", "gender": "neutral", "case": "akkusativ", "noun": "Buch", "translation": {"ru": "Ты дашь мне (эту) книгу?", "en": "Will you give me the book?"}},
+        { "sentence": "Wir gehen mit {blank} Hund spazieren.", "gender": "maskulin", "case": "dativ", "noun": "Hund", "translation": {"ru": "Мы гуляем с (этой) собакой.", "en": "We are walking with the dog."}}
+    ],
+    "pronouns": [
+        { "sentence": "Ich sehe {blank}.", "pronoun_nom": "du", "case": "akkusativ", "translation": {"ru": "Я вижу тебя.", "en": "I see you."}},
+        { "sentence": "Er hilft {blank}.", "pronoun_nom": "ich", "case": "dativ", "translation": {"ru": "Он помогает мне.", "en": "He helps me."}},
+        { "sentence": "Das Geschenk ist für {blank}.", "pronoun_nom": "er", "case": "akkusativ", "translation": {"ru": "Подарок для него.", "en": "The gift is for him."}},
+        { "sentence": "Sie spricht mit {blank}.", "pronoun_nom": "sie", "key": "she", "case": "dativ", "translation": {"ru": "Она говорит с ней.", "en": "She is speaking with her."}},
+        { "sentence": "Kannst du {blank} bitte helfen?", "pronoun_nom": "wir", "case": "dativ", "translation": {"ru": "Ты можешь нам, пожалуйста, помочь?", "en": "Can you please help us?"}}
+    ]
+}

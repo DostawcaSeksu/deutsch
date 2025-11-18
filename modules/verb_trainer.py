@@ -1,7 +1,7 @@
 import random
 import re
-import os
 from utils.file_handler import load_json
+from utils.ui import clear_screen
 import config
 
 class VerbTrainer:
@@ -28,7 +28,7 @@ class VerbTrainer:
     def run(self, stats):
         """Main entry point for the verb trainer module."""
         while True:
-            self._clear_screen()
+            clear_screen()
             print(self.loc.get('choose_verb_mode'))
             print(self.loc.get('verb_mode_1'))
             print(self.loc.get('verb_mode_2'))
@@ -66,7 +66,7 @@ class VerbTrainer:
     
     def _run_mode_1(self, stats, difficulty):
         """Mode 1: Guess the ending."""
-        self._clear_screen()
+        clear_screen()
         print(self.loc.get('mode_title', mode=1, title=self.loc.get('mode_1_title'), difficulty=difficulty.upper()))
         print(self.loc.get('exit_to_menu_prompt'))
 
@@ -83,8 +83,14 @@ class VerbTrainer:
             else:
                 verb_stem = random.choice(self.regular_verbs)[:-2]
 
+            pronoun_display = chosen_rule['pronoun']
+            if 'key' in chosen_rule:
+                pronoun_display += f" {self.loc.get(chosen_rule['key'])}"
+
             print(self.loc.get('current_score', score=stats['total_score']))
-            print(self.loc.get('question_ending', pronoun=pronoun, stem=verb_stem))
+            print(self.loc.get('question_ending', pronoun=pronoun_display, stem=verb_stem))
+
+            
             
             if difficulty in ['easy', 'medium']:
                 options = list(self.pronoun_groups.values())
@@ -118,7 +124,7 @@ class VerbTrainer:
 
     def _run_mode_2(self, stats, difficulty):
         """Mode 2: Guess the pronoun."""
-        self._clear_screen()
+        clear_screen()
         print(self.loc.get('mode_title', mode=2, title=self.loc.get('mode_2_title'), difficulty=difficulty.upper()))
         print(self.loc.get('exit_to_menu_prompt'))
         
@@ -162,7 +168,7 @@ class VerbTrainer:
                 user_input = input(self.loc.get('enter_pronouns_prompt'))
                 if user_input.lower() == 'm': break
                 
-                user_pronouns_set = set(user_input.lower().split())
+                user_pronouns_set = set(user_input.split())
                 correct_pronouns_set = self.group_to_pronouns_set[target_group]
                 
                 if user_pronouns_set == correct_pronouns_set:
@@ -187,6 +193,3 @@ class VerbTrainer:
         else:
             stats['total_score'] = max(0, stats['total_score'] - 1) # Prevents negative score
             stats[category][key]['incorrect'] += 1
-    
-    def _clear_screen(self):
-        os.system('cls' if os.name == 'nt' else 'clear')
