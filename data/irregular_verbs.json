@@ -1,0 +1,14 @@
+[
+    {"infinitive": "fahren", "stem": "fahr", "change": {"du": "fähr", "er/sie/es": "fähr"}},
+    {"infinitive": "sprechen", "stem": "sprech", "change": {"du": "sprich", "er/sie/es": "sprich"}},
+    {"infinitive": "geben", "stem": "geb", "change": {"du": "gib", "er/sie/es": "gib"}},
+    {"infinitive": "sehen", "stem": "seh", "change": {"du": "sieh", "er/sie/es": "sieh"}},
+    {"infinitive": "lesen", "stem": "les", "change": {"du": "lies", "er/sie/es": "lies"}},
+    {"infinitive": "helfen", "stem": "helf", "change": {"du": "hilf", "er/sie/es": "hilf"}},
+    {"infinitive": "nehmen", "stem": "nehm", "change": {"du": "nimm", "er/sie/es": "nimm"}},
+    {"infinitive": "treffen", "stem": "treff", "change": {"du": "triff", "er/sie/es": "triff"}},
+    {"infinitive": "essen", "stem": "ess", "change": {"du": "iss", "er/sie/es": "iss"}},
+    {"infinitive": "schlafen", "stem": "schlaf", "change": {"du": "schläf", "er/sie/es": "schläf"}},
+    {"infinitive": "laufen", "stem": "lauf", "change": {"du": "läuf", "er/sie/es": "läuf"}},
+    {"infinitive": "tragen", "stem": "trag", "change": {"du": "träg", "er/sie/es": "träg"}}
+]

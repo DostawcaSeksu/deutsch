@@ -1,0 +1,17 @@
+[
+    { "gender": "der", "singular": "Tisch", "plural": "Tische" },
+    { "gender": "der", "singular": "Apfel", "plural": "Äpfel" },
+    { "gender": "der", "singular": "Stuhl", "plural": "Stühle" },
+    { "gender": "der", "singular": "Mann", "plural": "Männer" },
+    { "gender": "der", "singular": "Hund", "plural": "Hunde" },
+    { "gender": "die", "singular": "Lampe", "plural": "Lampen" },
+    { "gender": "die", "singular": "Tasche", "plural": "Taschen" },
+    { "gender": "die", "singular": "Frau", "plural": "Frauen" },
+    { "gender": "die", "singular": "Katze", "plural": "Katzen" },
+    { "gender": "die", "singular": "Tür", "plural": "Türen" },
+    { "gender": "das", "singular": "Buch", "plural": "Bücher" },
+    { "gender": "das", "singular": "Haus", "plural": "Häuser" },
+    { "gender": "das", "singular": "Auto", "plural": "Autos" },
+    { "gender": "das", "singular": "Kind", "plural": "Kinder" },
+    { "gender": "das", "singular": "Fenster", "plural": "Fenster" }
+]
