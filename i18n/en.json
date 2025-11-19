@@ -2,7 +2,7 @@
     "app_title": "--- German Grammar Trainer ---",
     "current_score": "Your current score: {score}",
     "choose_mode": "Choose a mode:",
-    "menu_verbs": "1. Verb Conjugation (Präsens)",
+    "menu_verbs": "1. Verb Conjugation (Präsens / Perfekt)",
     "menu_nouns": "2. Nouns & Articles",
     "menu_cases": "3. Cases (Articles & Pronouns)",
     "menu_modals": "4. Modal Verbs",
@@ -64,5 +64,18 @@
     "stats_pronoun_decl_title": "\n--- Success Rate (Personal Pronouns) ---",
     "mode_7_title": "Modal Verb Conjugation",
     "question_modal": "\nPut the verb in the correct form: {pronoun} ({infinitive})",
-    "stats_modals_title": "\n--- Success Rate (Modal Verbs) ---"
+    "stats_modals_title": "\n--- Success Rate (Modal Verbs) ---",
+    "choose_tense": "Choose a tense:",
+    "tense_present": "1. Present Tense (Präsens)",
+    "tense_perfect": "2. Perfect Tense (Perfekt)",
+    "choose_perfekt_mode": "Choose a mode for Perfekt:",
+    "perfekt_mode_1": "1. Auxiliary Verbs (haben/sein)",
+    "perfekt_mode_2": "2. Participle II (Partizip II)",
+    "mode_perfekt_aux_title": "Auxiliary Verbs",
+    "mode_perfekt_part2_title": "Participle II",
+    "question_auxiliary": "\nWhich auxiliary verb fits '{verb}'? (haben/sein)\n",
+    "question_partizip": "\nWhat is the Partizip II of '{verb}'?\n",
+    "case_mode_3": "3. Definite Articles (Rapid Fire)",
+    "mode_8_title": "Definite Articles Drill",
+    "question_def_article": "\nWhat is the definite article for: {gender} {case}?\n"
 }

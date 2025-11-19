@@ -29,6 +29,24 @@ class VerbTrainer:
         """Main entry point for the verb trainer module."""
         while True:
             clear_screen()
+            print(self.loc.get('choose_tense'))
+            print(self.loc.get('tense_present'))
+            print(self.loc.get('tense_perfect'))
+            choice = input(self.loc.get('enter_number'))
+
+            if choice == '1':
+                self._run_present_tense(stats)
+            elif choice == '2':
+                self._run_perfect_tense(stats)
+            elif choice == 'm':
+                break
+            else:
+                print(self.loc.get('invalid_input'))
+                input(self.loc.get('press_enter'))
+
+    def _run_present_tense(self, stats):
+        while True:
+            clear_screen()
             print(self.loc.get('choose_verb_mode'))
             print(self.loc.get('verb_mode_1'))
             print(self.loc.get('verb_mode_2'))
@@ -41,6 +59,30 @@ class VerbTrainer:
             elif choice == '2':
                 difficulty = self._choose_difficulty()
                 self._run_mode_2(stats, difficulty)
+                break
+            elif choice == 'm':
+                break
+            else:
+                print(self.loc.get('invalid_input'))
+                input(self.loc.get('press_enter'))
+
+    def _run_perfect_tense(self, stats):
+        while True:
+            clear_screen()
+            print(self.loc.get('choose_perfekt_mode'))
+            print(self.loc.get('perfekt_mode_1'))
+            print(self.loc.get('perfekt_mode_2'))
+            choice = input(self.loc.get('enter_number'))
+
+            if choice == '1':
+                difficulty = self._choose_difficulty()
+                self._run_perfekt_auxiliary(stats, difficulty)
+                break
+            elif choice == '2':
+                difficulty = self._choose_difficulty()
+                self._run_perfekt_partizip(stats, difficulty)
+                break
+            elif choice == 'm':
                 break
             else:
                 print(self.loc.get('invalid_input'))
@@ -64,8 +106,14 @@ class VerbTrainer:
         weights = [stats[category][item]['incorrect'] + 1 for item in items]
         return random.choices(items, weights=weights, k=1)[0]
     
+    def _get_verb_stem(self, verb_data):
+        """Helper to get stem from verb data object or string (legacy support if needed)."""
+        if isinstance(verb_data, dict):
+            return verb_data['infinitive'][:-2] # Simple heuristic for regular verbs
+        return verb_data[:-2]
+
     def _run_mode_1(self, stats, difficulty):
-        """Mode 1: Guess the ending."""
+        """Mode 1: Guess the ending (Präsens)."""
         clear_screen()
         print(self.loc.get('mode_title', mode=1, title=self.loc.get('mode_1_title'), difficulty=difficulty.upper()))
         print(self.loc.get('exit_to_menu_prompt'))
@@ -81,7 +129,8 @@ class VerbTrainer:
                 verb_data = random.choice(self.irregular_verbs)
                 verb_stem = verb_data['change'].get(stat_group.split(' ')[0], verb_data['stem'])
             else:
-                verb_stem = random.choice(self.regular_verbs)[:-2]
+                verb_obj = random.choice(self.regular_verbs)
+                verb_stem = verb_obj['infinitive'][:-2]
 
             pronoun_display = chosen_rule['pronoun']
             if 'key' in chosen_rule:
@@ -90,8 +139,6 @@ class VerbTrainer:
             print(self.loc.get('current_score', score=stats['total_score']))
             print(self.loc.get('question_ending', pronoun=pronoun_display, stem=verb_stem))
 
-            
-            
             if difficulty in ['easy', 'medium']:
                 options = list(self.pronoun_groups.values())
                 random.shuffle(options)
@@ -123,7 +170,7 @@ class VerbTrainer:
             print("-" * 20)
 
     def _run_mode_2(self, stats, difficulty):
-        """Mode 2: Guess the pronoun."""
+        """Mode 2: Guess the pronoun (Präsens)."""
         clear_screen()
         print(self.loc.get('mode_title', mode=2, title=self.loc.get('mode_2_title'), difficulty=difficulty.upper()))
         print(self.loc.get('exit_to_menu_prompt'))
@@ -140,7 +187,8 @@ class VerbTrainer:
                 base_pronoun_for_change = target_group.split(' ')[0]
                 verb_stem = verb_data['change'].get(base_pronoun_for_change, verb_data['stem'])
             else:
-                verb_stem = random.choice(self.regular_verbs)[:-2]
+                verb_obj = random.choice(self.regular_verbs)
+                verb_stem = verb_obj['infinitive'][:-2]
                 
             conjugated_verb = verb_stem + correct_ending.replace('-', '')
 
@@ -183,6 +231,99 @@ class VerbTrainer:
                     correct_string = " ".join(sorted(list(self.group_to_pronouns_set[target_group])))
                     print(self.loc.get('incorrect_hard_pronoun', answer=correct_string))
                 self._update_stats(stats, 'pronoun_groups', target_group, False)
+            
+            print("-" * 20)
+
+    def _run_perfekt_auxiliary(self, stats, difficulty):
+        """Perfekt Mode 1: Guess Auxiliary (haben/sein)."""
+        clear_screen()
+        print(self.loc.get('mode_title', mode=3, title=self.loc.get('mode_perfekt_aux_title'), difficulty=difficulty.upper()))
+        print(self.loc.get('exit_to_menu_prompt'))
+
+        while True:
+            # Combine regular and irregular verbs for selection
+            all_verbs = self.regular_verbs + self.irregular_verbs
+            verb_data = random.choice(all_verbs)
+            infinitive = verb_data['infinitive']
+            correct_aux = verb_data['auxiliary']
+
+            print(self.loc.get('current_score', score=stats['total_score']))
+            print(self.loc.get('question_auxiliary', verb=infinitive))
+
+            user_answer = ""
+            if difficulty == 'easy':
+                options = ['haben', 'sein']
+                random.shuffle(options)
+                for i, option in enumerate(options, 1):
+                    print(f"{i}. {option}")
+                
+                user_choice = input(f"\n{self.loc.get('your_choice', options='1-2')} ").lower()
+                if user_choice == 'm': break
+                try:
+                    user_answer = options[int(user_choice) - 1]
+                except (ValueError, IndexError):
+                    print(f"\n⚠️ {self.loc.get('invalid_input')}\n")
+                    continue
+            else:
+                user_answer = input(self.loc.get('enter_answer_prompt')).strip().lower()
+                if user_answer == 'm': break
+
+            if user_answer == correct_aux:
+                print(self.loc.get('correct'))
+                # We can track stats for auxiliary verbs if we want, for now just total score
+                stats['total_score'] += 1
+            else:
+                print(self.loc.get('incorrect', answer=correct_aux))
+                stats['total_score'] = max(0, stats['total_score'] - 1)
+            
+            print("-" * 20)
+
+    def _run_perfekt_partizip(self, stats, difficulty):
+        """Perfekt Mode 2: Guess Partizip II."""
+        clear_screen()
+        print(self.loc.get('mode_title', mode=4, title=self.loc.get('mode_perfekt_part2_title'), difficulty=difficulty.upper()))
+        print(self.loc.get('exit_to_menu_prompt'))
+
+        while True:
+            all_verbs = self.regular_verbs + self.irregular_verbs
+            verb_data = random.choice(all_verbs)
+            infinitive = verb_data['infinitive']
+            correct_partizip = verb_data['partizip_2']
+
+            print(self.loc.get('current_score', score=stats['total_score']))
+            print(self.loc.get('question_partizip', verb=infinitive))
+
+            user_answer = ""
+            if difficulty == 'easy':
+                # Generate distractors
+                distractors = [v['partizip_2'] for v in random.sample(all_verbs, 3) if v['partizip_2'] != correct_partizip]
+                options = [correct_partizip] + distractors[:3]
+                random.shuffle(options)
+                for i, option in enumerate(options, 1):
+                    print(f"{i}. {option}")
+                
+                user_choice = input(f"\n{self.loc.get('your_choice', options='1-4')} ").lower()
+                if user_choice == 'm': break
+                try:
+                    user_answer = options[int(user_choice) - 1]
+                except (ValueError, IndexError):
+                    print(f"\n⚠️ {self.loc.get('invalid_input')}\n")
+                    continue
+            elif difficulty == 'medium':
+                # Hint: first letter and length
+                hint = correct_partizip[0] + "_" * (len(correct_partizip) - 1)
+                user_answer = input(f"\n{self.loc.get('enter_answer_prompt')} ({hint}): ").strip().lower()
+                if user_answer == 'm': break
+            else:
+                user_answer = input(self.loc.get('enter_answer_prompt')).strip().lower()
+                if user_answer == 'm': break
+
+            if user_answer == correct_partizip:
+                print(self.loc.get('correct'))
+                stats['total_score'] += 1
+            else:
+                print(self.loc.get('incorrect', answer=correct_partizip))
+                stats['total_score'] = max(0, stats['total_score'] - 1)
             
             print("-" * 20)
 

@@ -1,14 +1,122 @@
 [
-    {"infinitive": "fahren", "stem": "fahr", "change": {"du": "fähr", "er/sie/es": "fähr"}},
-    {"infinitive": "sprechen", "stem": "sprech", "change": {"du": "sprich", "er/sie/es": "sprich"}},
-    {"infinitive": "geben", "stem": "geb", "change": {"du": "gib", "er/sie/es": "gib"}},
-    {"infinitive": "sehen", "stem": "seh", "change": {"du": "sieh", "er/sie/es": "sieh"}},
-    {"infinitive": "lesen", "stem": "les", "change": {"du": "lies", "er/sie/es": "lies"}},
-    {"infinitive": "helfen", "stem": "helf", "change": {"du": "hilf", "er/sie/es": "hilf"}},
-    {"infinitive": "nehmen", "stem": "nehm", "change": {"du": "nimm", "er/sie/es": "nimm"}},
-    {"infinitive": "treffen", "stem": "treff", "change": {"du": "triff", "er/sie/es": "triff"}},
-    {"infinitive": "essen", "stem": "ess", "change": {"du": "iss", "er/sie/es": "iss"}},
-    {"infinitive": "schlafen", "stem": "schlaf", "change": {"du": "schläf", "er/sie/es": "schläf"}},
-    {"infinitive": "laufen", "stem": "lauf", "change": {"du": "läuf", "er/sie/es": "läuf"}},
-    {"infinitive": "tragen", "stem": "trag", "change": {"du": "träg", "er/sie/es": "träg"}}
+    {
+        "infinitive": "fahren",
+        "stem": "fahr",
+        "change": {
+            "du": "fähr",
+            "er/sie/es": "fähr"
+        },
+        "auxiliary": "sein",
+        "partizip_2": "gefahren"
+    },
+    {
+        "infinitive": "sprechen",
+        "stem": "sprech",
+        "change": {
+            "du": "sprich",
+            "er/sie/es": "sprich"
+        },
+        "auxiliary": "haben",
+        "partizip_2": "gesprochen"
+    },
+    {
+        "infinitive": "geben",
+        "stem": "geb",
+        "change": {
+            "du": "gib",
+            "er/sie/es": "gib"
+        },
+        "auxiliary": "haben",
+        "partizip_2": "gegeben"
+    },
+    {
+        "infinitive": "sehen",
+        "stem": "seh",
+        "change": {
+            "du": "sieh",
+            "er/sie/es": "sieh"
+        },
+        "auxiliary": "haben",
+        "partizip_2": "gesehen"
+    },
+    {
+        "infinitive": "lesen",
+        "stem": "les",
+        "change": {
+            "du": "lies",
+            "er/sie/es": "lies"
+        },
+        "auxiliary": "haben",
+        "partizip_2": "gelesen"
+    },
+    {
+        "infinitive": "helfen",
+        "stem": "helf",
+        "change": {
+            "du": "hilf",
+            "er/sie/es": "hilf"
+        },
+        "auxiliary": "haben",
+        "partizip_2": "geholfen"
+    },
+    {
+        "infinitive": "nehmen",
+        "stem": "nehm",
+        "change": {
+            "du": "nimm",
+            "er/sie/es": "nimm"
+        },
+        "auxiliary": "haben",
+        "partizip_2": "genommen"
+    },
+    {
+        "infinitive": "treffen",
+        "stem": "treff",
+        "change": {
+            "du": "triff",
+            "er/sie/es": "triff"
+        },
+        "auxiliary": "haben",
+        "partizip_2": "getroffen"
+    },
+    {
+        "infinitive": "essen",
+        "stem": "ess",
+        "change": {
+            "du": "iss",
+            "er/sie/es": "iss"
+        },
+        "auxiliary": "haben",
+        "partizip_2": "gegessen"
+    },
+    {
+        "infinitive": "schlafen",
+        "stem": "schlaf",
+        "change": {
+            "du": "schläf",
+            "er/sie/es": "schläf"
+        },
+        "auxiliary": "haben",
+        "partizip_2": "geschlafen"
+    },
+    {
+        "infinitive": "laufen",
+        "stem": "lauf",
+        "change": {
+            "du": "läuf",
+            "er/sie/es": "läuf"
+        },
+        "auxiliary": "sein",
+        "partizip_2": "gelaufen"
+    },
+    {
+        "infinitive": "tragen",
+        "stem": "trag",
+        "change": {
+            "du": "träg",
+            "er/sie/es": "träg"
+        },
+        "auxiliary": "haben",
+        "partizip_2": "getragen"
+    }
 ]

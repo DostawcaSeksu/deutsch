@@ -1,6 +1,117 @@
 [
-    "machen", "wohnen", "lernen", "sagen", "fragen", "spielen", 
-    "kaufen", "suchen", "kochen", "leben", "lieben", "hören",
-    "arbeiten", "brauchen", "glauben", "hoffen", "tanzen", "reisen",
-    "zeigen", "malen", "antworten", "bezahlen", "öffnen"
+    {
+        "infinitive": "machen",
+        "auxiliary": "haben",
+        "partizip_2": "gemacht"
+    },
+    {
+        "infinitive": "wohnen",
+        "auxiliary": "haben",
+        "partizip_2": "gewohnt"
+    },
+    {
+        "infinitive": "lernen",
+        "auxiliary": "haben",
+        "partizip_2": "gelernt"
+    },
+    {
+        "infinitive": "sagen",
+        "auxiliary": "haben",
+        "partizip_2": "gesagt"
+    },
+    {
+        "infinitive": "fragen",
+        "auxiliary": "haben",
+        "partizip_2": "gefragt"
+    },
+    {
+        "infinitive": "spielen",
+        "auxiliary": "haben",
+        "partizip_2": "gespielt"
+    },
+    {
+        "infinitive": "kaufen",
+        "auxiliary": "haben",
+        "partizip_2": "gekauft"
+    },
+    {
+        "infinitive": "suchen",
+        "auxiliary": "haben",
+        "partizip_2": "gesucht"
+    },
+    {
+        "infinitive": "kochen",
+        "auxiliary": "haben",
+        "partizip_2": "gekocht"
+    },
+    {
+        "infinitive": "leben",
+        "auxiliary": "haben",
+        "partizip_2": "gelebt"
+    },
+    {
+        "infinitive": "lieben",
+        "auxiliary": "haben",
+        "partizip_2": "geliebt"
+    },
+    {
+        "infinitive": "hören",
+        "auxiliary": "haben",
+        "partizip_2": "gehört"
+    },
+    {
+        "infinitive": "arbeiten",
+        "auxiliary": "haben",
+        "partizip_2": "gearbeitet"
+    },
+    {
+        "infinitive": "brauchen",
+        "auxiliary": "haben",
+        "partizip_2": "gebraucht"
+    },
+    {
+        "infinitive": "glauben",
+        "auxiliary": "haben",
+        "partizip_2": "geglaubt"
+    },
+    {
+        "infinitive": "hoffen",
+        "auxiliary": "haben",
+        "partizip_2": "gehofft"
+    },
+    {
+        "infinitive": "tanzen",
+        "auxiliary": "haben",
+        "partizip_2": "getanzt"
+    },
+    {
+        "infinitive": "reisen",
+        "auxiliary": "sein",
+        "partizip_2": "gereist"
+    },
+    {
+        "infinitive": "zeigen",
+        "auxiliary": "haben",
+        "partizip_2": "gezeigt"
+    },
+    {
+        "infinitive": "malen",
+        "auxiliary": "haben",
+        "partizip_2": "gemalt"
+    },
+    {
+        "infinitive": "antworten",
+        "auxiliary": "haben",
+        "partizip_2": "geantwortet"
+    },
+    {
+        "infinitive": "bezahlen",
+        "auxiliary": "haben",
+        "partizip_2": "bezahlt"
+    },
+    {
+        "infinitive": "öffnen",
+        "auxiliary": "haben",
+        "partizip_2": "geöffnet"
+    }
 ]

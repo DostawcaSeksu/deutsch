@@ -20,6 +20,7 @@ class CaseTrainer:
             print(self.loc.get('choose_case_mode'))
             print(self.loc.get('case_mode_1'))
             print(self.loc.get('case_mode_2'))
+            print(self.loc.get('case_mode_3'))
             choice = input(self.loc.get('enter_number'))
             
             if choice == '1':
@@ -27,6 +28,9 @@ class CaseTrainer:
                 break
             elif choice == '2':
                 self._run_pronoun_declension(stats)
+                break
+            elif choice == '3':
+                self._run_definite_article_drill(stats)
                 break
             else:
                 print(self.loc.get('invalid_input'))
@@ -149,6 +153,55 @@ class CaseTrainer:
 
             print("-" * 20)
     
+    def _run_definite_article_drill(self, stats):
+        """Mode 3: Rapid Fire Definite Articles."""
+        difficulty = self._choose_difficulty()
+        clear_screen()
+        print(self.loc.get('mode_title', mode=8, title=self.loc.get('mode_8_title'), difficulty=difficulty.upper()))
+        print(self.loc.get('exit_to_menu_prompt'))
+
+        genders = ['maskulin', 'feminin', 'neutral', 'plural']
+        cases = ['nominativ', 'akkusativ', 'dativ', 'genitiv']
+
+        while True:
+            gender = random.choice(genders)
+            case = random.choice(cases)
+            correct_answer = self.articles[gender][case]['bestimmter']
+
+            print(self.loc.get('current_score', score=stats['total_score']))
+            print(self.loc.get('question_def_article', gender=gender.capitalize(), case=case.capitalize()))
+
+            user_answer = ""
+            if difficulty == 'easy':
+                options = ['der', 'die', 'das', 'den', 'dem', 'des']
+                # Filter options to always include correct answer and some random others
+                current_options = list(set([correct_answer] + random.sample(options, 3)))
+                random.shuffle(current_options)
+                
+                for i, option in enumerate(current_options, 1):
+                    print(f"{i}. {option}")
+                
+                user_choice = input(f"\n{self.loc.get('your_choice', options=f'1-{len(current_options)}')} ").lower()
+                if user_choice == 'm': break
+                try:
+                    user_answer = current_options[int(user_choice) - 1]
+                except (ValueError, IndexError):
+                    print(f"\n⚠️ {self.loc.get('invalid_input')}\n")
+                    continue
+            else:
+                user_answer = input(self.loc.get('enter_answer_prompt')).strip().lower()
+                if user_answer == 'm': break
+
+            stat_key = f"{gender}-{case}"
+            if user_answer == correct_answer:
+                print(self.loc.get('correct'))
+                self._update_stats(stats, 'article_declension', stat_key, True)
+            else:
+                print(self.loc.get('incorrect', answer=correct_answer))
+                self._update_stats(stats, 'article_declension', stat_key, False)
+            
+            print("-" * 20)
+
     def _choose_difficulty(self):
         while True:
             print(self.loc.get('choose_difficulty'))
