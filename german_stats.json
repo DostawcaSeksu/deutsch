@@ -1,0 +1,52 @@
+{
+    "total_score": 5,
+    "endings": {
+        "-en": {
+            "correct": 2,
+            "incorrect": 0
+        },
+        "-st": {
+            "correct": 2,
+            "incorrect": 0
+        },
+        "-t": {
+            "correct": 2,
+            "incorrect": 0
+        }
+    },
+    "pronoun_groups": {
+        "er / sie / es / ihr": {
+            "correct": 0,
+            "incorrect": 2
+        },
+        "ich": {
+            "correct": 1,
+            "incorrect": 0
+        }
+    },
+    "articles": {
+        "der": {
+            "correct": 0,
+            "incorrect": 0
+        },
+        "die": {
+            "correct": 0,
+            "incorrect": 0
+        },
+        "das": {
+            "correct": 0,
+            "incorrect": 0
+        }
+    },
+    "singular_plural": {
+        "main": {
+            "correct": 0,
+            "incorrect": 0
+        }
+    },
+    "article_declension": {},
+    "pronoun_declension": {},
+    "modal_verbs": {},
+    "perfect": {},
+    "perfect_aux": {}
+}

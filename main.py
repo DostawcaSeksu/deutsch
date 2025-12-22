@@ -1,11 +1,12 @@
 import config
-from utils.file_handler import load_json, save_json
-from utils.localization import Localization
 from utils.ui import clear_screen
+from utils.localization import Localization
 from modules.verb_trainer import VerbTrainer
 from modules.noun_trainer import NounTrainer
 from modules.case_trainer import CaseTrainer
+from utils.file_handler import load_json, save_json
 from modules.modal_verb_trainer import ModalVerbTrainer
+from modules.vocabulary_trainer import VocabularyTrainer
 
 def main():
     """Main function to run the application."""
@@ -31,52 +32,51 @@ def main():
         print(loc.get('menu_nouns'))
         print(loc.get('menu_cases'))
         print(loc.get('menu_modals'))
+        print(loc.get('menu_w_fragen'))
         print(loc.get('menu_stats'))
         print(loc.get('menu_exit'))
         
         choice = input(loc.get('enter_number'))
         
-        if choice == '1':
-            try:
+        trainer = None
+
+        try:
+            if choice == '1':
                 trainer = VerbTrainer(loc)
-                trainer.run(stats)
-                save_json(config.STATS_FILE, stats)
-            except FileNotFoundError as e:
-                print(f"Error: {e}")
-                input(loc.get('press_enter'))
-        elif choice == '2':
-            try:
+            elif choice == '2':
                 trainer = NounTrainer(loc)
-                trainer.run(stats)
-                save_json(config.STATS_FILE, stats)
-            except FileNotFoundError as e:
-                print(f"Error: {e}")
-                input(loc.get('press_enter'))
-        elif choice == '3':
-            try:
+            elif choice == '3':
                 trainer = CaseTrainer(loc)
-                trainer.run(stats)
-                save_json(config.STATS_FILE, stats)
-            except FileNotFoundError as e:
-                print(f"Error: {e}")
-                input(loc.get('press_enter'))
-        elif choice == '4':
-            try:
+            elif choice == '4':
                 trainer = ModalVerbTrainer(loc)
+            elif choice == '5':
+                trainer = VocabularyTrainer(
+                    loc, 
+                    data_file=config.W_FRAGEN_FILE, 
+                    category_key='w_fragen', 
+                    title_key='mode_w_fragen_title'
+                )
+            elif choice == '6':
+                display_stats(stats, loc)
+                continue
+            elif choice == '7':
+                print(loc.get('goodbye'))
+                break
+            else:
+                print(loc.get('invalid_input'))
+                input(loc.get('press_enter'))
+                continue
+
+            if trainer:
                 trainer.run(stats)
                 save_json(config.STATS_FILE, stats)
-            except FileNotFoundError as e:
-                print(f"Error: {e}")
-                input(loc.get('press_enter'))
-        
-        elif choice == '5':
-            display_stats(stats, loc)
-        elif choice == '6':
-            print(loc.get('goodbye'))
-            break
-        else:
-            print(loc.get('invalid_input'))
+
+        except FileNotFoundError as e:
+            print(f"Error: {e}")
             input(loc.get('press_enter'))
+        except Exception as e:
+             print(f"An unexpected error occurred: {e}")
+             input(loc.get('press_enter'))
 
 def select_language():
     """Prompts the user to select a language."""

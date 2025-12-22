@@ -1,0 +1,56 @@
+﻿[
+    {
+        "word": "wo",
+        "translation": { "ru": "где", "en": "where" },
+        "sentence": "___ wohnst du?",
+        "answer": "Wo"
+    },
+    {
+        "word": "woher",
+        "translation": { "ru": "откуда", "en": "where from" },
+        "sentence": "___ kommst du?",
+        "answer": "Woher"
+    },
+    {
+        "word": "wohin",
+        "translation": { "ru": "куда", "en": "where to" },
+        "sentence": "___ gehst du?",
+        "answer": "Wohin"
+    },
+    {
+        "word": "was",
+        "translation": { "ru": "что", "en": "what" },
+        "sentence": "___ machst du?",
+        "answer": "Was"
+    },
+    {
+        "word": "wer",
+        "translation": { "ru": "кто", "en": "who" },
+        "sentence": "___ ist das?",
+        "answer": "Wer"
+    },
+    {
+        "word": "wie",
+        "translation": { "ru": "как", "en": "how" },
+        "sentence": "___ heißt du?",
+        "answer": "Wie"
+    },
+    {
+        "word": "wann",
+        "translation": { "ru": "когда", "en": "when" },
+        "sentence": "___ kommst du nach Hause?",
+        "answer": "Wann"
+    },
+    {
+        "word": "warum",
+        "translation": { "ru": "почему", "en": "why" },
+        "sentence": "___ lernst du Deutsch?",
+        "answer": "Warum"
+    },
+    {
+        "word": "welche",
+        "translation": { "ru": "какой, какая, какие", "en": "which" },
+        "sentence": "___ Farbe gefällt dir?",
+        "answer": "Welche"
+    }
+]
