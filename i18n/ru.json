@@ -7,8 +7,9 @@
     "menu_cases": "3. Падежи (Артикли и Местоимения)",
     "menu_modals": "4. Модальные глаголы",
     "menu_w_fragen": "5. W-Fragen (Вопросительные слова)",
-    "menu_stats": "6. Показать статистику",
-    "menu_exit": "7. Выход",
+    "menu_conjunctions": "6. Союзы (Aber, Weil, Dass...)",
+    "menu_stats": "7. Показать статистику",
+    "menu_exit": "8. Выход",
     "enter_number": "\nВведите номер: ",
     "invalid_input": "Неверный ввод. Попробуйте еще раз.",
     "press_enter": "Нажмите Enter для продолжения...",
@@ -78,6 +79,7 @@
     "question_partizip": "\nКакое Partizip II у глагола '{verb}'?\n",
     "case_mode_3": "3. Определенные артикли (Блиц)",
     "mode_8_title": "Тренировка артиклей",
+    "question_def_article": "\nКакой определенный артикль: {gender} {case}?\n",
     "mode_w_fragen_title": "Тренировка W-Fragen",
-    "question_def_article": "\nКакой определенный артикль: {gender} {case}?\n"
+    "mode_conjunctions_title": "Тренировка союзов"
 }

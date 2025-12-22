@@ -33,6 +33,8 @@ def main():
         print(loc.get('menu_cases'))
         print(loc.get('menu_modals'))
         print(loc.get('menu_w_fragen'))
+        print(loc.get('menu_conjunctions'))
+
         print(loc.get('menu_stats'))
         print(loc.get('menu_exit'))
         
@@ -57,9 +59,16 @@ def main():
                     title_key='mode_w_fragen_title'
                 )
             elif choice == '6':
+             trainer = VocabularyTrainer(
+                loc, 
+                data_file=config.CONJUNCTIONS_FILE, 
+                category_key='conjunctions', 
+                title_key='mode_conjunctions_title'
+            )
+            elif choice == '7':
                 display_stats(stats, loc)
                 continue
-            elif choice == '7':
+            elif choice == '8':
                 print(loc.get('goodbye'))
                 break
             else:

@@ -1,0 +1,20 @@
+﻿[
+    { "word": "und", "translation": { "ru": "и", "en": "and" }, "sentence": "Ich bin müde, ___ ich gehe schlafen.", "answer": "und" },
+    { "word": "aber", "translation": { "ru": "но", "en": "but" }, "sentence": "Das Auto ist schön, ___ es ist teuer.", "answer": "aber" },
+    { "word": "oder", "translation": { "ru": "или", "en": "or" }, "sentence": "Trinkst du Tee ___ Kaffee?", "answer": "oder" },
+    { "word": "denn", "translation": { "ru": "так как (прямой порядок)", "en": "because (pos 0)" }, "sentence": "Ich lerne Deutsch, ___ ich will in Berlin leben.", "answer": "denn" },
+    { "word": "sondern", "translation": { "ru": "а (после отрицания)", "en": "but rather" }, "sentence": "Das ist kein Apfel, ___ eine Birne.", "answer": "sondern" },
+    
+    { "word": "weil", "translation": { "ru": "потому что (глагол в конец)", "en": "because (verb at end)" }, "sentence": "Ich esse nichts, ___ ich keinen Hunger habe.", "answer": "weil" },
+    { "word": "dass", "translation": { "ru": "что (союз)", "en": "that" }, "sentence": "Ich weiß, ___ du Recht hast.", "answer": "dass" },
+    { "word": "wenn", "translation": { "ru": "если / когда (многокр.)", "en": "if / when" }, "sentence": "___ es regnet, bleibe ich zu Hause.", "answer": "Wenn" },
+    { "word": "als", "translation": { "ru": "когда (однокр. в прошлом)", "en": "when (past single)" }, "sentence": "___ ich ein Kind war, spielte ich viel.", "answer": "Als" },
+    { "word": "ob", "translation": { "ru": "ли (косвенный вопрос)", "en": "whether" }, "sentence": "Ich weiß nicht, ___ er heute kommt.", "answer": "ob" },
+    { "word": "obwohl", "translation": { "ru": "хотя", "en": "although" }, "sentence": "___ er krank ist, geht er zur Arbeit.", "answer": "Obwohl" },
+    { "word": "damit", "translation": { "ru": "чтобы", "en": "so that" }, "sentence": "Ich lerne viel, ___ ich die Prüfung bestehe.", "answer": "damit" },
+    
+    { "word": "deshalb", "translation": { "ru": "поэтому (инверсия)", "en": "therefore" }, "sentence": "Ich bin krank, ___ bleibe ich im Bett.", "answer": "deshalb" },
+    { "word": "trotzdem", "translation": { "ru": "несмотря на это", "en": "nevertheless" }, "sentence": "Es regnet, ___ gehen wir spazieren.", "answer": "trotzdem" },
+    { "word": "dann", "translation": { "ru": "потом / тогда", "en": "then" }, "sentence": "Erst essen wir, ___ sehen wir fern.", "answer": "dann" },
+    { "word": "sonst", "translation": { "ru": "иначе", "en": "otherwise" }, "sentence": "Beeil dich, ___ verpasst du den Zug.", "answer": "sonst" }
+]
